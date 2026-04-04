@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mahamat Dillo — Portfolio</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <a href="index.html" class="nav-brand">
+    <img src="images/mo.jpeg" alt="Mahamat Dillo" class="nav-avatar">
+    <span class="nav-name">@bavarois</span>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html" class="active">Accueil</a></li>
+    <li><a href="pages/apropos.html">À propos</a></li>
+    <li><a href="pages/competences.html">Compétences</a></li>
+    <li><a href="pages/projets.html">Projets</a></li>
+    <li><a href="pages/contact.html">Contact</a></li>
+  </ul>
+  <button class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<main class="page">
+  <section class="hero">
+    <div class="hero-content">
+      <span class="hero-tag">🎓 ESTM Dakar — Génie Logiciel & Admin Réseaux</span>
+      <h1 class="hero-title">
+        Salut, je suis<br>
+        <span class="highlight">Mahamat Dillo</span>
+        <span class="accent-word"> Berkou</span>
+      </h1>
+      <p class="hero-sub">
+        Étudiant en 2ème année à l'ESTM de Dakar, passionné par le développement web,
+        les réseaux informatiques et l'électronique embarquée. Je transforme des idées
+        en solutions numériques concrètes.
+      </p>
+      <div class="hero-actions">
+        <a href="pages/projets.html" class="btn btn-primary">
+          <i class="fas fa-folder-open"></i> Voir mes projets
+        </a>
+        <a href="pages/contact.html" class="btn btn-outline">
+          <i class="fas fa-envelope"></i> Me contacter
+        </a>
+      </div>
+      <div class="stats-bar">
+        <div class="stat-item">
+          <div class="stat-number">4+</div>
+          <div class="stat-label">Projets</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">5</div>
+          <div class="stat-label">Technologies</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">2</div>
+          <div class="stat-label">Années d'études</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-image-wrap">
+      <img src="images/mo.jpeg" alt="Mahamat Dillo Berkou" class="hero-avatar">
+    </div>
+  </section>
+
+  <!-- APERÇU COMPÉTENCES -->
+  <section style="padding-top: 0;">
+    <div class="section-label reveal">Ce que je maîtrise</div>
+    <h2 class="section-title reveal">Mes Compétences</h2>
+    <div class="section-divider reveal"></div>
+    <div class="skills-grid">
+      <div class="skill-card reveal">
+        <span class="skill-icon">🌐</span>
+        <span class="skill-name">HTML</span>
+      </div>
+      <div class="skill-card reveal">
+        <span class="skill-icon">🎨</span>
+        <span class="skill-name">CSS</span>
+      </div>
+      <div class="skill-card reveal">
+        <span class="skill-icon">⚡</span>
+        <span class="skill-name">JavaScript</span>
+      </div>
+      <div class="skill-card reveal">
+        <span class="skill-icon">🐘</span>
+        <span class="skill-name">PHP</span>
+      </div>
+      <div class="skill-card reveal">
+        <span class="skill-icon">🔧</span>
+        <span class="skill-name">Arduino</span>
+      </div>
+      <div class="skill-card reveal">
+        <span class="skill-icon">🌐</span>
+        <span class="skill-name">Cisco</span>
+      </div>
+      <div class="skill-card reveal">
+        <span class="skill-icon">📡</span>
+        <span class="skill-name">ESP32</span>
+      </div>
+      <div class="skill-card reveal">
+        <span class="skill-icon">🛒</span>
+        <span class="skill-name">E-commerce</span>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top: 2rem;">
+      <a href="pages/competences.html" class="btn btn-outline">
+        Voir toutes mes compétences <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- APERÇU PROJETS -->
+  <section>
+    <div class="section-label reveal">Ce que j'ai réalisé</div>
+    <h2 class="section-title reveal">Projets Récents</h2>
+    <div class="section-divider reveal"></div>
+    <div class="projects-grid">
+      <div class="project-card reveal">
+        <div class="project-img-placeholder">🌐</div>
+        <div class="project-body">
+          <div class="project-tags">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">JavaScript</span>
+          </div>
+          <h3 class="project-title">Développement Web</h3>
+          <p class="project-desc">Création de pages web complètes avec design responsive, structurées et optimisées pour tous les écrans.</p>
+        </div>
+      </div>
+      <div class="project-card reveal">
+        <div class="project-img-placeholder">🔌</div>
+        <div class="project-body">
+          <div class="project-tags">
+            <span class="tag">Arduino</span>
+            <span class="tag">ESP32</span>
+            <span class="tag">IoT</span>
+          </div>
+          <h3 class="project-title">Système IoT ESP32</h3>
+          <p class="project-desc">Système connecté avec ESP32 : contrôle de LED, LCD, gestion de porte, bus retour et capteurs de température/humidité.</p>
+        </div>
+      </div>
+      <div class="project-card reveal">
+        <div class="project-img-placeholder">🌐</div>
+        <div class="project-body">
+          <div class="project-tags">
+            <span class="tag">Cisco</span>
+            <span class="tag">Réseaux</span>
+          </div>
+          <h3 class="project-title">Configuration Réseau</h3>
+          <p class="project-desc">Configuration d'architectures réseau en adressage statique et dynamique (DHCP) avec Cisco Packet Tracer.</p>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top: 2rem;">
+      <a href="pages/projets.html" class="btn btn-primary">
+        Tous les projets <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+  </section>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-copy">© 2025 Mahamat Dillo Berkou — @bavarois</span>
+  <div class="footer-socials">
+    <a href="https://www.facebook.com/profile.php?id=100080874432473" target="_blank" title="Facebook">
+      <i class="fab fa-facebook"></i>
+    </a>
+    <a href="https://www.instagram.com/bavaroiscriminos/" target="_blank" title="Instagram">
+      <i class="fab fa-instagram"></i>
+    </a>
+    <a href="bavbavarois@gmail.com" title="Gmail">
+      <i class="fas fa-envelope"></i>
+    </a>
+  </div>
+</footer>
+
+<script>
+  // Reveal on scroll
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  reveals.forEach(r => observer.observe(r));
+</script>
+</body>
+</html>
