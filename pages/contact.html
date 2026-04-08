@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Mahamat Dillo</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<nav>
+  <a href="../index.html" class="nav-brand">
+    <img src="../images/profil.jpg" alt="Mahamat Dillo" class="nav-avatar">
+    <span class="nav-name">@bavarois</span>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="../index.html">Accueil</a></li>
+    <li><a href="apropos.html">À propos</a></li>
+    <li><a href="competences.html">Compétences</a></li>
+    <li><a href="projets.html">Projets</a></li>
+    <li><a href="contact.html" class="active">Contact</a></li>
+  </ul>
+  <button class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<main class="page">
+  <section>
+    <div class="section-label reveal">Restons en contact</div>
+    <h2 class="section-title reveal">Me Contacter</h2>
+    <div class="section-divider reveal"></div>
+
+    <div class="contact-grid">
+      <!-- INFOS CONTACT -->
+      <div>
+        <div class="contact-info reveal">
+          <h3>Parlons de votre projet</h3>
+          <p>
+            Vous avez une question, une idée ou un projet à réaliser ?
+            N'hésitez pas à m'écrire. Je réponds généralement dans les 24h.
+          </p>
+        </div>
+
+        <div class="contact-socials reveal">
+          <a href="https://www.facebook.com/profile.php?id=100080874432473" target="_blank" class="social-link">
+            <span class="social-icon"><i class="fab fa-facebook"></i></span>
+            <span>Facebook — Mahamat Dillo</span>
+          </a>
+          <a href="https://www.instagram.com/bavaroiscriminos/" target="_blank" class="social-link">
+            <span class="social-icon"><i class="fab fa-instagram"></i></span>
+            <span>Instagram — @bavaroiscriminos</span>
+          </a>
+          <a href="mailto:ton.email@gmail.com" class="social-link">
+            <span class="social-icon"><i class="fas fa-envelope"></i></span>
+            <span>Gmail — ton.email@gmail.com</span>
+          </a>
+        </div>
+
+        <div class="reveal" style="margin-top: 2rem; background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem;">
+          <div style="font-family: 'Space Mono', monospace; font-size: 0.7rem; color: var(--primary); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.1em;">
+            📍 Localisation
+          </div>
+          <div style="color: var(--text); font-size: 0.95rem; font-weight: 600;">Dakar, Sénégal</div>
+          <div style="color: var(--muted); font-size: 0.8rem; margin-top: 0.3rem;">ESTM — École Supérieure de Technologie et de Management</div>
+        </div>
+      </div>
+
+      <!-- FORMULAIRE DE CONTACT -->
+      <div class="reveal">
+        <form onsubmit="handleContact(event)" style="background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 2rem;">
+          <h3 style="margin-bottom: 1.5rem; font-size: 1.1rem;">Envoyer un message</h3>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div class="form-group">
+              <label for="c-nom">Nom</label>
+              <input type="text" id="c-nom" placeholder="Votre nom" required>
+            </div>
+            <div class="form-group">
+              <label for="c-prenom">Prénom</label>
+              <input type="text" id="c-prenom" placeholder="Votre prénom" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="c-email">Email</label>
+            <input type="email" id="c-email" placeholder="exemple@gmail.com" required>
+          </div>
+          <div class="form-group">
+            <label for="c-sujet">Sujet</label>
+            <input type="text" id="c-sujet" placeholder="Objet de votre message" required>
+          </div>
+          <div class="form-group">
+            <label for="c-message">Message</label>
+            <textarea id="c-message" placeholder="Votre message..." required style="height: 140px;"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%;">
+            <i class="fas fa-paper-plane"></i> Envoyer le message
+          </button>
+          <div id="contact-success" style="display:none; margin-top:1rem; color: var(--primary); font-size: 0.9rem; text-align: center;">
+            ✅ Message envoyé ! Merci, je vous répondrai bientôt.
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <span class="footer-copy">© 2025 Mahamat Dillo Berkou — @bavarois</span>
+  <div class="footer-socials">
+    <a href="https://www.facebook.com/profile.php?id=100080874432473" target="_blank"><i class="fab fa-facebook"></i></a>
+    <a href="https://www.instagram.com/bavaroiscriminos/" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="mailto:ton.email@gmail.com"><i class="fas fa-envelope"></i></a>
+  </div>
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  reveals.forEach(r => observer.observe(r));
+
+  function handleContact(e) {
+    e.preventDefault();
+    document.getElementById('contact-success').style.display = 'block';
+    e.target.reset();
+  }
+</script>
+</body>
+</html>
